@@ -91,7 +91,7 @@ class LinkedList {
                 LinkedList() {
                   snt = new Node;
                   snt->next = snt;
-                  snt->prev = snt;
+                  //snt->prev = snt;
                   length = 0;
 
                 }
@@ -182,7 +182,7 @@ template<typename T>
 typename LinkedList<T>::iterator LinkedList<T>::erase(typename LinkedList<T>::iterator position) {
   Node * rm = position.itr;
   auto ret = rm->next;
-  //rm->prev->next = rm->next;
+  rm->prev->next = rm->next;
   rm->next->prev = rm->prev;
   delete rm;
   length -= 1;
