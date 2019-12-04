@@ -230,14 +230,14 @@ void ArrayList<T>::remove(int index){
 template<typename T>
 void ArrayList<T>::checkAndGrow() {
   if( numElems >= arrayCap ){
-      T* bigger = new T[arrayCap*2];
+      T* bigger = new T[arrayCap];
+      arrayCap = arrayCap*2;
       for(int i=0; i<numElems; i++)
       {
           bigger[i] = array[i];
       };
       delete[] array;
       array = bigger;
-      arrayCap = arrayCap*2;
   }
 }
 
