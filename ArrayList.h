@@ -195,7 +195,7 @@ template<typename T>
 void ArrayList<T>::insert(const T &t,int index){
   checkAndGrow();
   for(int i=numElems; i>index; --i) {
-    array[i] = array[i+1];
+    array[i] = array[i-1];
   }
   array[index] = t;
   ++numElems;
