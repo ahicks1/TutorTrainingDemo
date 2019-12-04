@@ -140,7 +140,7 @@ ArrayList<T>::ArrayList():array{new T[10]},arrayCap{10},numElems{0} {
 template<typename T>
 ArrayList<T>::ArrayList(const ArrayList &that){
   arrayCap = that.arrayCap;
-  numElems = that.numElems;
+  int numElems = that.numElems;
   array = new T[that.arrayCap];
   for(int i=0; i<numElems; i++) {
 
